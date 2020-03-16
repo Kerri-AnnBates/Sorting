@@ -13,7 +13,6 @@ def selection_sort(arr):
 
         for curr in range(j, len(arr)):
             # Check if curr < smallest index
-            print("curr", curr)
             if arr[curr] <= arr[smallest_index]:
                 # smallest_index is equal to curr
                 smallest_index = curr
@@ -29,24 +28,25 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # swapped = True
     # repeated until we pass through the entire collection without performing a single swap
+    swapped = True
+    while swapped == True:
+        count = 0
+        # 1. Loop through your array
+        for indx in range(0, len(arr) - 1):
+            curr_index = indx
+            next_index = curr_index + 1
 
-    # count = 0
+            #   - Compare each element to its neighbor
+            # 	- If elements in wrong position (relative to each other, swap them)
+            if arr[curr_index] > arr[next_index]:
+                # swap elements
+                arr[curr_index], arr[next_index] = arr[next_index], arr[curr_index]
+                count += 1
 
-    # # 1. Loop through your array
-    # for indx in range(0, len(arr) - 1):
-    #     curr_index = 0
-    #     next_index = curr_index + 1
-
-    #     #   - Compare each element to its neighbor
-    #     # 	- If elements in wrong position (relative to each other, swap them)
-    #     if arr[curr_index] > arr[next_index]:
-    #         # swap elements
-    #         arr[cur_index], arr[next_index] = arr[next_index], arr[cur_index]
-    #         count += 1
-
-    # # 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+        # 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+        if count == 0:
+            swapped = False
 
     return arr
 
